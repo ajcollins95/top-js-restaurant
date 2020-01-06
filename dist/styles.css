@@ -1,0 +1,25 @@
+body {
+    background-color: rgba(36, 123, 173, 0.829);
+    
+}
+
+button {
+    font-size: 2em;
+    border-radius: 8px;
+    background-color: lightsteelblue;
+    border: none;
+}
+
+nav {
+    justify-content: space-between;
+    width: 40%;
+    margin: auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+#content-frame {
+    border-style: solid;
+}
