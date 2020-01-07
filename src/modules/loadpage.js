@@ -2,17 +2,32 @@ function loadPage() {
     //returns an element that contains a skeleton of the page
     //ie Nav Bar, content frame, and footer
 
+    let title = createTitle()
     let nav = createNav()
     let frame = createContentWindow()
-    //let footer = createFooter()
-
+    let footer = createFooter()
+    let spacer = createSpacer()
     let page = document.createElement('div')
 
     page.appendChild(nav)
+    page.appendChild(title)
     page.appendChild(frame)
-    //page.appendChild(footer)
+    page.appendChild(spacer)
+    page.appendChild(footer)
 
     return page
+}
+
+//Title Creator
+function createTitle() {
+    //Show restaurant name
+    let h2 = document.createElement('h2')
+    let restaurantName = 'The Rusty Spatula(r)'
+
+    h2.id = 'title'
+    h2.innerText = restaurantName
+
+    return h2
 }
 
 
@@ -42,12 +57,36 @@ function createButton(name) {
     return btn
 }
 
+//ContentWindow function
 function createContentWindow() {
     let content = document.createElement('div')
 
     content.id = 'content-frame'
 
     return content
+}
+
+//Create footer 
+function createFooter() {
+    //creates footer content and positions it.
+    let footer = document.createElement('footer')
+    let p = document.createElement('p')
+
+    p.innerText = '*tetanus shots not included'
+    p.style['text-align'] = 'center'
+    p.style.margin = 'auto'
+
+    footer.appendChild(p)
+
+    return footer
+}
+
+//Create spacer 
+function createSpacer() {
+    //creates spacer element
+    let spacer = document.createElement('div')
+    spacer.classList.add('spacer')
+    return spacer
 }
 
 export default loadPage;
